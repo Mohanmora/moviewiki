@@ -20,7 +20,7 @@ async function getmovie(){                                                      
       const data = await response.json();
     for (i = 0; i < data.Search.length; i++) {  
 
-        if(i<=5) {
+        if(i<=5) {								/* Limits to 6 results*/
    
           const card = document.createElement('div');
           card.setAttribute('class', 'card');
@@ -40,7 +40,7 @@ async function getmovie(){                                                      
 	      card.appendChild(a);
         }
 
-        else if (i>=6){
+        else if (i>=6){								/* Hide other results*/
           const hdncard = document.createElement('div');
           hdncard.setAttribute('id','hdncard');
 
@@ -63,7 +63,7 @@ async function getmovie(){                                                      
         card.appendChild(a);
 
         }
-   } 
+   } 											/* creating Show more button  dynamically*/
    var element = document.createElement("input");
    element.type = "button";
    element.name = "show";
